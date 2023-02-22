@@ -5,13 +5,10 @@ function CategoryGridTitle({color,title,whenPressExecute}){
         <View style={styles.outerView}>
             <Pressable
             android_ripple={{color:"#ccc"}}
-            // style={({pressed})=>{
-            //     [styles.pressable,pressed ? styles.pressedButton : null]
-            // }}
-            style={[styles.innerView, {backgroundColor: color}]}
+            style={({pressed})=> [styles.pressable,pressed ? styles.pressedButton : null]}
             onPress={whenPressExecute}
             >
-                <View>
+                <View style={[styles.innerView, {backgroundColor: color}]}>
                     <Text style={{fontSize:25}}>{title}</Text>
                 </View>
             </Pressable>
