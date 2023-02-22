@@ -8,7 +8,7 @@ function CategoriesScreen(props){
             <CategoryGridTitle title={itemData.item.title}
             color={itemData.item.color} 
             whenPressExecute={()=>{
-                props.navigation.navigate("MealsOverviewScreen")
+                props.navigation.navigate("MealsOverviewScreen",{categoryId: itemData.item.id})
             }}/>
         )
     }
