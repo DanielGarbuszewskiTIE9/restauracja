@@ -7,6 +7,7 @@ const MealDetailScreen = (props) => {
     const selectedMeal = MEALS.find( meal => meal.id === mealId )
 
     return (
+    <>
     <View>
         <Image source={ {uri:selectedMeal.imageUrl } } 
                 style={styles.image} />  
@@ -16,7 +17,23 @@ const MealDetailScreen = (props) => {
                     complexity={selectedMeal.complexity}
                 />
     
+
     </View>
+    <View>
+        <Text>Ingredents</Text>
+        {
+            selectedMeal.ingredients.map((ingredients)=>
+            <Text key={ingredients}>{ingredients}</Text>)
+        }
+    </View>
+    <View>
+    <Text>Steps</Text>
+        {
+            selectedMeal.steps.map((steps)=>
+            <Text key={steps}>{steps}</Text>)
+        }
+    </View>
+    </>
     )
 }
 
